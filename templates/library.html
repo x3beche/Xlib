@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="icon" href="../static/ico/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="../static/css/library.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html--> 
+<div class="container">
+  <h2>{{title}}<small></small></h2>
+  <ul class="responsive-table">
+    <li class="table-header"><div class="col col-1">ID</div><div class="col col-2">Document Name</div><div class="col col-3">Upload Date</div><div class="col col-4">File Size</div></li>
+      {% for doc in documents %}
+      <a class="document" href="../static/documents/{{doc['name']}}" target="_blank"><li class="table-row"><div class="col col-1" data-label="ID">{{doc['id']}}</div><div class="col col-2" data-label="Document Name"><strong>{{doc['title']}}</strong></div><div class="col col-3" data-label="Upload Date">{{doc['date']}}</div><div class="col col-4" data-label="File Size">{{doc['size']}}</div></li></a>
+      {% endfor %}
+  </ul>
+</div>
+<!-- partial -->
+</body>
+</html>
